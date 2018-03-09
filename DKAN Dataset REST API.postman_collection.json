@@ -1,0 +1,396 @@
+{
+	"info": {
+		"name": "DKAN Dataset REST API",
+		"_postman_id": "e2e56c98-738a-3fa9-119e-bd7b679a08a1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/dataset/user/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "SbKKNwXWRpBmTPVylBoWQA7SEg6DI0-n_e1Sx8g6GPg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/dataset/user/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"dataset",
+						"user",
+						"login"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "/services/session/token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/services/session/token",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"services",
+						"session",
+						"token"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Dataset index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{csrf}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/api/dataset/node.json?parameters[type]=dataset&page=0",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"dataset",
+						"node.json"
+					],
+					"query": [
+						{
+							"key": "parameters[type]",
+							"value": "dataset",
+							"equals": true
+						},
+						{
+							"key": "page",
+							"value": "0",
+							"equals": true
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Create Dataset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{csrf}}"
+					},
+					{
+						"key": "Cookie",
+						"value": "WZxr2JFAN1Vt_61xV82Smnn0YwzoLN7JPWQ_wQm0me0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\":\"A node created via DKAN REST API\",\n  \"type\":\"dataset\",\n  \"body\": {\n    \"und\": [{\"value\": \"This should be the description\"}]\n  }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/dataset/node",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"dataset",
+						"node"
+					]
+				},
+				"description": "Create node"
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve dataset",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{csrf}}"
+					},
+					{
+						"key": "Cookie",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\":\"A node created via DKAN REST API\",\n  \"type\":\"dataset\",\n  \"body\": {\n    \"und\": [{\"value\": \"This should be the description\"}]\n  }\n}'"
+				},
+				"url": {
+					"raw": "{{url}}/api/dataset/node/41.json",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"dataset",
+						"node",
+						"41.json"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Create Resource",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{csrf}}"
+					},
+					{
+						"key": "Cookie",
+						"value": "WZxr2JFAN1Vt_61xV82Smnn0YwzoLN7JPWQ_wQm0me0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\":\"Test Resource\",\n  \"type\":\"resource\",\n  \"field_dataset_ref\": {\n    \"und\": {\"target_id\": 41}\n  }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/dataset/node",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"dataset",
+						"node"
+					]
+				},
+				"description": "/api/dataset/node"
+			},
+			"response": []
+		},
+		{
+			"name": "Attach file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"disabled": true
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{csrf}}"
+					},
+					{
+						"key": "Cookie",
+						"value": "WZxr2JFAN1Vt_61xV82Smnn0YwzoLN7JPWQ_wQm0me0"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "attach",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "field_name",
+							"value": "field_upload",
+							"type": "text"
+						},
+						{
+							"key": "files[1]",
+							"type": "file"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/api/dataset/node/42/attach_file",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"dataset",
+						"node",
+						"42",
+						"attach_file"
+					]
+				},
+				"description": "/api/dataset/node/42/attach_file"
+			},
+			"response": []
+		},
+		{
+			"name": "Remove file from resource",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{csrf}}"
+					},
+					{
+						"key": "Cookie",
+						"value": "",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"field_upload\": {\n    \"und\": [{}]\n  }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/dataset/node/42",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"dataset",
+						"node",
+						"42"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "Update Dataset: Add tags",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW46YWRtaW4=",
+						"disabled": true
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-CSRF-Token",
+						"value": "{{csrf}}"
+					},
+					{
+						"key": "Cookie",
+						"value": "WZxr2JFAN1Vt_61xV82Smnn0YwzoLN7JPWQ_wQm0me0",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\": \"Updated dataset\",\n    \"field_tags\": {\n        \"und\": [\n            {\n                \"tid\": 9\n            }\n        ]\n    }\n}"
+				},
+				"url": {
+					"raw": "{{url}}/api/dataset/node/41",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"dataset",
+						"node",
+						"41"
+					]
+				},
+				"description": null
+			},
+			"response": []
+		}
+	]
+}
